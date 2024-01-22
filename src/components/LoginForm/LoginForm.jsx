@@ -22,7 +22,7 @@ export const LoginForm = () => {
   const onSubmitForm = (values, helpers) => {
     const { email, password } = values;
 
-    dispatch(login({ email, password }));
+    dispatch(logIn({ email, password }));
     helpers.resetForm();
   };
 
