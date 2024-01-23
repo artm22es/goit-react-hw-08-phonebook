@@ -1,7 +1,12 @@
 import * as Yup from 'yup';
 import Notiflix from 'notiflix';
-import { Field, Formik } from 'formik';
-import { ContactFormWrapper, ButtonForm, Error } from './ContactForm.styled';
+import { Formik } from 'formik';
+import {
+  ContactFormWrapper,
+  ButtonForm,
+  Error,
+  StyledContactField,
+} from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { addContact } from '../../redux/contacts/operations';
@@ -48,13 +53,16 @@ export const ContactForm = () => {
     >
       <ContactFormWrapper>
         <label>
-          Name
-          <Field name="name" autoComplete="off" required />
+          <StyledContactField name="name" autoComplete="off" required />
           <Error component="p" name="name" />
         </label>
         <label>
-          Phone
-          <Field type="tel" autoComplete="off" name="phone" required />
+          <StyledContactField
+            type="tel"
+            autoComplete="off"
+            name="phone"
+            required
+          />
           <Error component="p" name="phone" />
         </label>
         <ButtonForm type="submit">Add contact</ButtonForm>

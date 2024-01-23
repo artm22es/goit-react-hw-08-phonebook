@@ -1,29 +1,41 @@
-import { ErrorMessage, Form } from 'formik';
+import { ErrorMessage, Field, Form } from 'formik';
 import styled from 'styled-components';
 
 export const ContactFormWrapper = styled(Form)`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  align-items: center;
+  gap: 40px;
 
-  > label {
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  button {
+    width: 100%;
+    min-width: 300px;
+    height: 40px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background-color: #6666ff;
+    color: white;
+    transition: background-color 250ms linear, color 250ms linear;
 
-    > input {
-      max-width: 200px;
-      height: 25px;
-      border-radius: 5px;
+    &:hover {
+      background-color: #9999ff;
+      color: #333333;
     }
   }
 `;
 
+export const StyledContactField = styled(Field)`
+  padding: 8px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  width: 100%;
+  min-width: 300px;
+  height: 40px;
+`;
+
 export const Error = styled(ErrorMessage)`
   color: red;
-  font-size: 15px;
-  font-weight: bold;
+  font-size: 12px;
 `;
 
 export const ButtonForm = styled.button`

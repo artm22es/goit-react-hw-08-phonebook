@@ -6,8 +6,11 @@ export const FilterWrapper = styled.div`
   gap: 10px;
 
   > input {
-    max-width: 200px;
-    height: 25px;
-    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 100%;
+    min-width: 300px;
+    height: 40px;
   }
 `;

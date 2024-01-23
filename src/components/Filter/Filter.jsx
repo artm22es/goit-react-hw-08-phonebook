@@ -9,12 +9,12 @@ export const Filter = () => {
 
   return (
     <FilterWrapper>
-      Filter by name
       <input
         type="text"
         name="name"
         value={filter}
         onChange={evt => dispatch(changeFilter(evt.target.value))}
+        placeholder="Filter by name"
       />
     </FilterWrapper>
   );

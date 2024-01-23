@@ -1,7 +1,15 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/opertaions';
 import * as Yup from 'yup';
+import {
+  Container,
+  Error,
+  NavLinkStyled,
+  StyledField,
+  StyledForm,
+  TextWrapper,
+} from 'components/CommonStyles';
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -37,25 +45,38 @@ export const RegisterForm = () => {
       validationSchema={RegisterSchema}
       onSubmit={onSubmitForm}
     >
-      <Form>
-        <h2>Register</h2>
-        <label>
-          Name
-          <Field name="name" autoComplete="off" />
-          <ErrorMessage component="p" name="name" />
-        </label>
-        <label>
-          Email
-          <Field type="email" name="email" autoComplete="off" />
-          <ErrorMessage component="p" name="email" />
-        </label>
-        <label>
-          Password
-          <Field type="password" name="password" autoComplete="off" />
-          <ErrorMessage component="p" name="password" />
-        </label>
-        <button type="submit">Register</button>
-      </Form>
+      <Container>
+        <StyledForm>
+          <h2>CREATE YOUR ACCOUNT</h2>
+          <label>
+            <StyledField name="name" autoComplete="off" placeholder="Name" />
+            <Error component="p" name="name" />
+          </label>
+          <label>
+            <StyledField
+              type="email"
+              name="email"
+              autoComplete="off"
+              placeholder="Email"
+            />
+            <Error component="p" name="email" />
+          </label>
+          <label>
+            <StyledField
+              type="password"
+              name="password"
+              autoComplete="off"
+              placeholder="Password"
+            />
+            <Error component="p" name="password" />
+          </label>
+          <button type="submit">Create</button>
+          <TextWrapper>
+            <p>Do you already have an account?</p>
+            <NavLinkStyled to="/Login">Login</NavLinkStyled>
+          </TextWrapper>
+        </StyledForm>
+      </Container>
     </Formik>
   );
 };

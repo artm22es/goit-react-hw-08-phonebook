@@ -3,12 +3,13 @@ import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/opertaions';
 import * as Yup from 'yup';
 import {
+  Container,
   Error,
   NavLinkStyled,
-  SignUpBox,
   StyledField,
-  StyledLoginForm,
-} from './LoginForm.styled';
+  StyledForm,
+  TextWrapper,
+} from 'components/CommonStyles';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -39,31 +40,34 @@ export const LoginForm = () => {
       validationSchema={LoginSchema}
       onSubmit={onSubmitForm}
     >
-      <StyledLoginForm>
-        <label>
-          <StyledField
-            type="email"
-            name="email"
-            autoComplete="off"
-            placeholder="Email"
-          />
-          <Error component="p" name="email" />
-        </label>
-        <label>
-          <StyledField
-            type="password"
-            name="password"
-            autoComplete="off"
-            placeholder="Password"
-          />
-          <Error component="p" name="password" />
-        </label>
-        <button type="submit">Log in</button>
-        <SignUpBox>
-          <p>Don't have an account?</p>
-          <NavLinkStyled to="/register">Signup</NavLinkStyled>
-        </SignUpBox>
-      </StyledLoginForm>
+      <Container>
+        <StyledForm>
+          <h1>PHONEBOOK</h1>
+          <label>
+            <StyledField
+              type="email"
+              name="email"
+              autoComplete="off"
+              placeholder="Email"
+            />
+            <Error component="p" name="email" />
+          </label>
+          <label>
+            <StyledField
+              type="password"
+              name="password"
+              autoComplete="off"
+              placeholder="Password"
+            />
+            <Error component="p" name="password" />
+          </label>
+          <button type="submit">Log in</button>
+          <TextWrapper>
+            <p>Don't have an account?</p>
+            <NavLinkStyled to="/register">Signup</NavLinkStyled>
+          </TextWrapper>
+        </StyledForm>
+      </Container>
     </Formik>
   );
 };
