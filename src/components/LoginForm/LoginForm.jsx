@@ -1,7 +1,14 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/opertaions';
 import * as Yup from 'yup';
+import {
+  Error,
+  NavLinkStyled,
+  SignUpBox,
+  StyledField,
+  StyledLoginForm,
+} from './LoginForm.styled';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -32,20 +39,31 @@ export const LoginForm = () => {
       validationSchema={LoginSchema}
       onSubmit={onSubmitForm}
     >
-      <Form>
-        <h2>Log in</h2>
+      <StyledLoginForm>
         <label>
-          Email
-          <Field type="email" name="email" autoComplete="off" />
-          <ErrorMessage component="p" name="email" />
+          <StyledField
+            type="email"
+            name="email"
+            autoComplete="off"
+            placeholder="Email"
+          />
+          <Error component="p" name="email" />
         </label>
         <label>
-          Password
-          <Field type="password" name="password" autoComplete="off" />
-          <ErrorMessage component="p" name="password" />
+          <StyledField
+            type="password"
+            name="password"
+            autoComplete="off"
+            placeholder="Password"
+          />
+          <Error component="p" name="password" />
         </label>
         <button type="submit">Log in</button>
-      </Form>
+        <SignUpBox>
+          <p>Don't have an account?</p>
+          <NavLinkStyled to="/register">Signup</NavLinkStyled>
+        </SignUpBox>
+      </StyledLoginForm>
     </Formik>
   );
 };
