@@ -5,24 +5,9 @@ export const ContactFormWrapper = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  margin-bottom: 40px;
-
-  button {
-    width: 100%;
-    min-width: 300px;
-    height: 40px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    background-color: #6666ff;
-    color: white;
-    transition: background-color 250ms linear, color 250ms linear;
-
-    &:hover {
-      background-color: #9999ff;
-      color: #333333;
-    }
-  }
+  gap: 20px;
+  max-width: 340px;
+  padding-bottom: 40px;
 `;
 
 export const StyledContactField = styled(Field)`
@@ -30,7 +15,7 @@ export const StyledContactField = styled(Field)`
   border: 1px solid grey;
   border-radius: 10px;
   width: 100%;
-  min-width: 300px;
+  min-width: 340px;
   height: 40px;
 `;
 
@@ -40,12 +25,16 @@ export const Error = styled(ErrorMessage)`
 `;
 
 export const ButtonForm = styled.button`
-  max-width: 100px;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 6px 10px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  background-color: #6666ff;
+  color: white;
+  transition: background-color 250ms linear, color 250ms linear;
 
   &:hover {
-    background-color: gold;
+    background-color: #9999ff;
+    color: #333333;
   }
 `;

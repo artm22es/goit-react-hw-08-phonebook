@@ -8,7 +8,7 @@ export const AppContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px 30px;
-  width: 600px;
+  width: 400px;
   height: auto;
   background-color: #fff;
 `;

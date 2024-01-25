@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/operations';
 import { AppContainer, NavBox, NavBtn, NavList } from './Contacts.styled';
 import { IoMdAdd } from 'react-icons/io';
@@ -9,11 +9,13 @@ import { ContactForm } from 'components/ContactForm/ContactForm';
 import { Filter } from 'components/Filter/Filter';
 import { logOut } from '../../redux/auth/opertaions';
 import { ContactList } from 'components/ContactList/ContactList';
+import { selectFilteredContacts } from '../../redux/contacts/selectors';
 
 export default function Contacts() {
   const dispatch = useDispatch();
   const [addContactForm, setAddContactForm] = useState(false);
   const [addFilter, setAddFilter] = useState(false);
+  const persistedContacts = useSelector(selectFilteredContacts);
 
   const handleAddBtn = () => setAddContactForm(!addContactForm);
   const handleFilterBtn = () => setAddFilter(!addFilter);
@@ -50,7 +52,11 @@ export default function Contacts() {
         </div>
         {addContactForm && <ContactForm />}
         {addFilter && <Filter />}
-        <ContactList />
+        {persistedContacts.length > 0 ? (
+          <ContactList />
+        ) : (
+          <p>You don't have any contact yet</p>
+        )}
       </AppContainer>
     </main>
   );
