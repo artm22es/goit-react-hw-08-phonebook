@@ -1,11 +1,23 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchContacts } from '../../redux/contacts/operations';
-import { AppContainer } from './Contacts.styled';
-import { Navigation } from 'components/Navigation/Navigation';
+import { AppContainer, NavBox, NavBtn, NavList } from './Contacts.styled';
+import { IoMdAdd } from 'react-icons/io';
+import { FaSearch } from 'react-icons/fa';
+import { MdLogout } from 'react-icons/md';
+import { ContactForm } from 'components/ContactForm/ContactForm';
+import { Filter } from 'components/Filter/Filter';
+import { logOut } from '../../redux/auth/opertaions';
+import { ContactList } from 'components/ContactList/ContactList';
 
 export default function Contacts() {
   const dispatch = useDispatch();
+  const [addContactForm, setAddContactForm] = useState(false);
+  const [addFilter, setAddFilter] = useState(false);
+
+  const handleAddBtn = () => setAddContactForm(!addContactForm);
+  const handleFilterBtn = () => setAddFilter(!addFilter);
+  const handleLogoutBtn = () => dispatch(logOut());
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -14,7 +26,31 @@ export default function Contacts() {
   return (
     <main>
       <AppContainer>
-        <Navigation />
+        <div>
+          <NavBox>
+            <h3>Phonebook</h3>
+            <NavList>
+              <li>
+                <NavBtn type="button" onClick={handleAddBtn}>
+                  <IoMdAdd size={30} />
+                </NavBtn>
+              </li>
+              <li>
+                <NavBtn type="button" onClick={handleFilterBtn}>
+                  <FaSearch size={20} />
+                </NavBtn>
+              </li>
+              <li>
+                <NavBtn type="button" onClick={handleLogoutBtn}>
+                  <MdLogout size={25} />
+                </NavBtn>
+              </li>
+            </NavList>
+          </NavBox>
+        </div>
+        {addContactForm && <ContactForm />}
+        {addFilter && <Filter />}
+        <ContactList />
       </AppContainer>
     </main>
   );

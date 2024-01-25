@@ -6,6 +6,7 @@ export const ContactFormWrapper = styled(Form)`
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-bottom: 40px;
 
   button {
     width: 100%;

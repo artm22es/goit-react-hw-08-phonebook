@@ -53,7 +53,12 @@ export const ContactForm = () => {
     >
       <ContactFormWrapper>
         <label>
-          <StyledContactField name="name" autoComplete="off" required />
+          <StyledContactField
+            name="name"
+            autoComplete="off"
+            placeholder="Name"
+            required
+          />
           <Error component="p" name="name" />
         </label>
         <label>
@@ -61,6 +66,7 @@ export const ContactForm = () => {
             type="tel"
             autoComplete="off"
             name="phone"
+            placeholder="Phone"
             required
           />
           <Error component="p" name="phone" />
