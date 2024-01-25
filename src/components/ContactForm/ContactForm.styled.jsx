@@ -15,7 +15,7 @@ export const StyledContactField = styled(Field)`
   border: 1px solid grey;
   border-radius: 10px;
   width: 100%;
-  min-width: 340px;
+  min-width: 300px;
   height: 40px;
 `;
 
@@ -25,7 +25,7 @@ export const Error = styled(ErrorMessage)`
 `;
 
 export const ButtonForm = styled.button`
-  width: 100%;
+  width: 306px;
   height: 40px;
   border: 1px solid grey;
   border-radius: 10px;

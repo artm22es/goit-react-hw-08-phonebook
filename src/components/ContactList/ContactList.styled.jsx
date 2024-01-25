@@ -14,7 +14,7 @@ export const ContactListWrapper = styled.ul`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 20px;
+    font-size: 18px;
   }
 `;
 

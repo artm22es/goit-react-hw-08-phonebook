@@ -9,8 +9,9 @@ export const AppContainer = styled.div`
   transform: translate(-50%, -50%);
   padding: 20px 30px;
   width: 400px;
-  height: auto;
+  max-height: 600px;
   background-color: #fff;
+  overflow-y: auto;
 `;
 
 export const NavBox = styled.nav`
