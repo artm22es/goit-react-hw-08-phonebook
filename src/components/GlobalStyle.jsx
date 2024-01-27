@@ -7,7 +7,7 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #fcf4e8;
+    background-color: ${p => p.theme.colors.primaryColor}
   }
 
   ul, li {

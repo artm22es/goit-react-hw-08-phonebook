@@ -2,14 +2,9 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { logIn } from '../../redux/auth/opertaions';
 import * as Yup from 'yup';
-import {
-  Container,
-  Error,
-  NavLinkStyled,
-  StyledField,
-  StyledForm,
-  TextWrapper,
-} from 'components/CommonStyles';
+import { LoginFormStyled, StyledBtn, StyledField } from './LoginForm.styled';
+import { Error } from 'components/ContactForm/ContactForm.styled';
+import { Section, Title } from 'components/CommonStyle';
 
 const LoginSchema = Yup.object().shape({
   email: Yup.string()
@@ -40,9 +35,9 @@ export const LoginForm = () => {
       validationSchema={LoginSchema}
       onSubmit={onSubmitForm}
     >
-      <Container>
-        <StyledForm>
-          <h1>PHONEBOOK</h1>
+      <Section>
+        <LoginFormStyled>
+          <Title>Login</Title>
           <label>
             <StyledField
               type="email"
@@ -61,13 +56,9 @@ export const LoginForm = () => {
             />
             <Error component="p" name="password" />
           </label>
-          <button type="submit">Log in</button>
-          <TextWrapper>
-            <p>Don't have an account?</p>
-            <NavLinkStyled to="/register">Signup</NavLinkStyled>
-          </TextWrapper>
-        </StyledForm>
-      </Container>
+          <StyledBtn type="submit">Log in</StyledBtn>
+        </LoginFormStyled>
+      </Section>
     </Formik>
   );
 };

@@ -21,7 +21,7 @@ export const register = createAsyncThunk(
       Notiflix.Notify.success('Registration completed successfully!');
       return res.data;
     } catch (e) {
-      Notiflix.Notify.failure('You already have this contact!');
+      Notiflix.Notify.failure('You already have an account!');
       return thunkAPI.rejectWithValue(e.message);
     }
   }

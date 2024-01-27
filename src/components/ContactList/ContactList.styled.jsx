@@ -1,43 +1,33 @@
 import styled from 'styled-components';
 
-export const ContactSection = styled.div`
-  padding: 40px 0;
-`;
-
 export const ContactListWrapper = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 0;
+  align-items: center;
+  padding: 28px 14px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  width: 350px;
+  margin: 0;
+  gap: 20px;
 
   li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 18px;
+    gap: 20px;
+    width: 100%;
   }
 `;
 
-export const StyledSpan = styled.span`
+export const ContactText = styled.p`
+  font-size: 18px;
+  margin: 0;
+  color: ${p => p.theme.colors.secondaryColor};
+`;
+
+export const ContactBox = styled.span`
   display: flex;
   align-items: center;
-  gap: 10px;
-`;
-
-export const ButtonDelete = styled.button`
-  max-width: 100px;
-  border-radius: 5px;
-  font-size: 14px;
-  padding: 6px 10px;
-  margin-left: 20px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  background-color: #6666ff;
-  color: white;
-  transition: background-color 250ms linear, color 250ms linear;
-
-  &:hover {
-    background-color: #9999ff;
-    color: #333333;
-  }
+  gap: 8px;
 `;

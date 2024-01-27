@@ -2,14 +2,13 @@ import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/opertaions';
 import * as Yup from 'yup';
+import { Error } from 'components/ContactForm/ContactForm.styled';
+import { Section, Title } from 'components/CommonStyle';
 import {
-  Container,
-  Error,
-  NavLinkStyled,
+  LoginFormStyled,
+  StyledBtn,
   StyledField,
-  StyledForm,
-  TextWrapper,
-} from 'components/CommonStyles';
+} from 'components/LoginForm/LoginForm.styled';
 
 const RegisterSchema = Yup.object().shape({
   name: Yup.string()
@@ -45,9 +44,9 @@ export const RegisterForm = () => {
       validationSchema={RegisterSchema}
       onSubmit={onSubmitForm}
     >
-      <Container>
-        <StyledForm>
-          <h2>CREATE YOUR ACCOUNT</h2>
+      <Section>
+        <LoginFormStyled>
+          <Title>CREATE YOUR ACCOUNT</Title>
           <label>
             <StyledField name="name" autoComplete="off" placeholder="Name" />
             <Error component="p" name="name" />
@@ -70,13 +69,9 @@ export const RegisterForm = () => {
             />
             <Error component="p" name="password" />
           </label>
-          <button type="submit">Create</button>
-          <TextWrapper>
-            <p>Do you already have an account?</p>
-            <NavLinkStyled to="/Login">Login</NavLinkStyled>
-          </TextWrapper>
-        </StyledForm>
-      </Container>
+          <StyledBtn type="submit">Create</StyledBtn>
+        </LoginFormStyled>
+      </Section>
     </Formik>
   );
 };

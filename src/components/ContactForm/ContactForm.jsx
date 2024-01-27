@@ -10,6 +10,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from '../../redux/contacts/selectors';
 import { addContact } from '../../redux/contacts/operations';
+import { Section } from 'components/CommonStyle';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -51,28 +52,30 @@ export const ContactForm = () => {
       validationSchema={ContactSchema}
       onSubmit={onSubmitForm}
     >
-      <ContactFormWrapper>
-        <label>
-          <StyledContactField
-            name="name"
-            autoComplete="off"
-            placeholder="Name"
-            required
-          />
-          <Error component="p" name="name" />
-        </label>
-        <label>
-          <StyledContactField
-            type="tel"
-            autoComplete="off"
-            name="number"
-            placeholder="Number"
-            required
-          />
-          <Error component="p" name="number" />
-        </label>
-        <ButtonForm type="submit">Add contact</ButtonForm>
-      </ContactFormWrapper>
+      <Section>
+        <ContactFormWrapper>
+          <label>
+            <StyledContactField
+              name="name"
+              autoComplete="off"
+              placeholder="Name"
+              required
+            />
+            <Error component="p" name="name" />
+          </label>
+          <label>
+            <StyledContactField
+              type="tel"
+              autoComplete="off"
+              name="number"
+              placeholder="Number"
+              required
+            />
+            <Error component="p" name="number" />
+          </label>
+          <ButtonForm type="submit">Add contact</ButtonForm>
+        </ContactFormWrapper>
+      </Section>
     </Formik>
   );
 };

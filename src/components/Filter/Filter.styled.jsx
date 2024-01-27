@@ -1,16 +1,25 @@
 import styled from 'styled-components';
 
 export const FilterWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+  width: 600px;
+  padding-bottom: 20px;
 
-  > input {
-    padding: 8px;
-    border: 1px solid grey;
-    border-radius: 10px;
+  input {
     width: 100%;
-    min-width: 300px;
-    height: 40px;
+    background-color: transparent;
+    border: 2px solid ${p => p.theme.colors.secondaryColor};
+    border-radius: 6px;
+    height: 30px;
+    padding: 4px 8px;
+    color: ${p => p.theme.colors.secondaryColor};
+
+    &:focus {
+      outline: none;
+      border-color: ${p => p.theme.colors.accentColor};
+    }
+
+    &::placeholder {
+      color: ${p => p.theme.colors.secondaryColor};
+    }
   }
 `;

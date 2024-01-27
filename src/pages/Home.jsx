@@ -1,5 +1,12 @@
-import { HomeSection } from 'components/HomeSection/HomeSection';
+import { NavLinkStyled, Section, Title } from 'components/CommonStyle';
 
 export default function Home() {
-  return <HomeSection />;
+  return (
+    <Section>
+      <Title>Welcome to Phonebook!</Title>
+      <NavLinkStyled to="/login" title="let's start">
+        Let's start!
+      </NavLinkStyled>
+    </Section>
+  );
 }
