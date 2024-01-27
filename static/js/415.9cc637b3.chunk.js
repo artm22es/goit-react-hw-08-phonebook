@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[415],{5415:function(e,t,r){r.r(t),r.d(t,{default:function(){return s}});var n=r(8167),o=r(184);function s(){return(0,o.jsxs)(n.$0,{children:[(0,o.jsx)(n.Dx,{children:"Welcome to Phonebook!"}),(0,o.jsx)(n.w2,{to:"/login",title:"let's start",children:"Let's start!"})]})}}}]);
+//# sourceMappingURL=415.9cc637b3.chunk.js.map
