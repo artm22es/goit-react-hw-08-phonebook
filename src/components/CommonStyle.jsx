@@ -3,6 +3,10 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = styled.div`
   padding: 60px 120px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px 40px;
+  }
 `;
 
 export const Section = styled.section`
